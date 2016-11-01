@@ -1,0 +1,2 @@
+1. if (p) is testing the value of pointer p, which is an address if the pointer p is not empty. If the pointer is not an empty pointer, if (true). It the pointer is an empty pointer, if (false).
+2. if (*p) is testing the value of the object that the pointer p points to. If the value of that int object is 0, if(false). If the value is not 0, if (true)

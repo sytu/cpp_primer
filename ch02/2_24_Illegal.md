@@ -1,0 +1,2 @@
+Pointer p is legal because it is a type void* pointer which can save the address of an object with any type. In other words, this kind of pointer is allowed to point to an object with any type. In this case, pointer p saves the address of an int variable i.
+But without using type void*, pointer lp which has a type long, can only point to an object with type long, which is not the case of variable i.
