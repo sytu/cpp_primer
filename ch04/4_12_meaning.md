@@ -1,0 +1,3 @@
+i != j < k 
+Because the precedence of < is higger than !=, the first thing is to obtain the return value of (j < k), which will be a bool, 1(true) if j is less than k, or a bool, 0(false) if j is bigger or equal to k.
+Finally, i will compare with that return value. If i is not a bool, the returned bool will be converted to the type of i. If the converted value is equal to i, the statement is false. If not, then true.
