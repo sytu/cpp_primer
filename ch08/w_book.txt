@@ -1,0 +1,6 @@
+BookNo: nogi-1 UnitsSold: 520 Revenue: 5252 AveragePrice: 10.1
+BookNo: akb-1 UnitsSold: 20 Revenue: 22 AveragePrice: 1.1
+BookNo: nogi-1 UnitsSold: 520 Revenue: 5252 AveragePrice: 10.1
+BookNo: akb-1 UnitsSold: 20 Revenue: 22 AveragePrice: 1.1
+BookNo: nogi-1 UnitsSold: 520 Revenue: 5252 AveragePrice: 10.1
+BookNo: akb-1 UnitsSold: 20 Revenue: 22 AveragePrice: 1.1
