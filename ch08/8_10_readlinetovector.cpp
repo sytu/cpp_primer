@@ -21,7 +21,6 @@ void ReadFileToVector(const string &fileName, vector<string> &svec) {
 // read&save string element from vector and print
 void PrintVector(vector<string> &svec) {
 	istringstream iss;
-	string word;
 	cout << svec.size() << endl; 
 	for (auto i=0; i!=svec.size(); ++i) {
 		// istringstream iss(svec[i]);
