@@ -1,16 +1,16 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <map>
+#include <unordered_map>
 #include <string>
 
 using std::cout; using std::cin; using std::endl; 
 using std::ifstream; using std::istringstream; 
-using std::string; using std::map; 
+using std::string; using std::unordered_map; 
 using std::cerr; using std::runtime_error;
 
-map<string, string> prepareMap(ifstream &mf) {
-	map<string, string> r_map;
+unordered_map<string, string> prepareMap(ifstream &mf) {
+	unordered_map<string, string> r_map;
 	string key, value;
 	while (mf >> key && getline(mf, value)) {
 		try {
@@ -25,7 +25,7 @@ map<string, string> prepareMap(ifstream &mf) {
 	return r_map;
 }
 
-const string & transWord(map<string, string> &r_map, string &s) {
+const string & transWord(unordered_map<string, string> &r_map, string &s) {
 	auto found = r_map.find(s);
 	if (found != r_map.end())
 		return found->second;

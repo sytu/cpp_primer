@@ -26,6 +26,5 @@ int main() {
 			cout << child << " "; 
 		cout << endl << endl; 
 	}
-
 }
 

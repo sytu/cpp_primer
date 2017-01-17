@@ -1,3 +1,4 @@
+// improve function transWord for omitting the notation after the word
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -6,7 +7,7 @@
 
 using std::cout; using std::cin; using std::endl; 
 using std::ifstream; using std::istringstream; 
-using std::string; using std::map; 
+using std::string; using std::map; using std::pair;using std::to_string;
 using std::cerr; using std::runtime_error;
 
 map<string, string> prepareMap(ifstream &mf) {
@@ -25,10 +26,29 @@ map<string, string> prepareMap(ifstream &mf) {
 	return r_map;
 }
 
-const string & transWord(map<string, string> &r_map, string &s) {
-	auto found = r_map.find(s);
-	if (found != r_map.end())
-		return found->second;
+pair<string, string> parseWord(string s) {
+	pair<string, string> p = {s, ""};
+
+	if (s.back() == ',') {
+		s.erase(s.size()-1);
+		return {s, ","};
+	}
+
+	if (s.back()=='.') {
+		s.erase(s.size()-1);
+		return {s, "."};
+	}
+
+	return p;
+}
+
+string transWord(map<string, string> &r_map, string &s) {
+	pair<string, string> p = parseWord(s);
+	string word = p.first;
+	string n = p.second;
+	auto found = r_map.find(word);
+	if (found != r_map.end()) 
+		return found->second + n;
 	else 
 		return s;
 }
