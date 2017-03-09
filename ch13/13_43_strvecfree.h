@@ -2,6 +2,7 @@
 #define STRVEC_H
 #include <string>
 #include <memory>
+#include <algorithm>
 
 class StrVec {
 public:
@@ -46,8 +47,7 @@ void StrVec::push_back(const string &str) {
 }
 void StrVec::free() {
 	if (element) {
-		for (auto p=first_free; p!=element; )
-			alloc.destroy(--p);
+		for_each(element, first_free, [this](string &s) { alloc.destroy(&s); }); // prefer this version
 		alloc.deallocate(element, cap-element);
 	}
 }
